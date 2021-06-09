@@ -11,13 +11,15 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+  @import '../style/general.scss';
+
     nav {
         display: flex;
         align-items: center;
 
         height: 75px;
         padding: 0 20px;
-        background-color: black;
+        background-color: $second-color;
 
         img {
             height: 50px;
