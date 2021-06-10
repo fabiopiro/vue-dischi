@@ -22,26 +22,27 @@ export default {
     .album {
         text-align: center;
 
+        margin: 15px 0px;
         padding: 10px;
-        margin: 10px;
-        height: 300px;
         background-color: $second-color;
 
         img {
             width: 100%;
             height: 50%;
-            margin-bottom: 15px;
+            margin-bottom: 30px;
             object-fit: contain;
         }
 
         .title {
             text-transform: uppercase;
+            font-weight: bold;
+            font-size: 25px;
             color: white;
         }
 
         .author,
         .year {
-            color: lightgray;
+            color: gray;
         }
     }
 </style>
