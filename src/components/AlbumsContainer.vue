@@ -35,8 +35,18 @@ export default {
             genreToSearch: '',
         }
     },
+    methods: {
+        searchGenre: function (genreSelected) {
+            // console.log(genreSelected);
+            this.genreToSearch = genreSelected;
+            // console.log(this.genreToSearch);
+        }
+    },
     computed: {
         filteredAlbums: function () {
+            if (this.genreToSearch == "All") {
+                return this.albums
+            }
             const newGenre = this.albums.filter(
                 (element) => {
                     // console.log(element.genre);
@@ -46,13 +56,6 @@ export default {
                 }
             );
             return newGenre
-        }
-    },
-    methods: {
-        searchGenre: function (genreSelected) {
-            console.log(genreSelected);
-            this.genreToSearch = genreSelected;
-            console.log(this.genreToSearch);
         }
     },
     created: function () {
