@@ -3,7 +3,7 @@
         <Nav @performSearch='searchGenre' />
         <div class="row">
             <div 
-            v-for = '(album, index) in albums'
+            v-for = '(album, index) in filteredAlbums'
             :key = 'index'
             class="col-6 col-md-4 col-lg-3">
                 <Album 
@@ -32,11 +32,27 @@ export default {
         return {
             apiUrl: 'https://flynn.boolean.careers/exercises/api/array/music',
             albums: [],
+            genreToSearch: '',
+        }
+    },
+    computed: {
+        filteredAlbums: function () {
+            const newGenre = this.albums.filter(
+                (element) => {
+                    // console.log(element.genre);
+                    return element.genre.includes(
+                        this.genreToSearch
+                    )
+                }
+            );
+            return newGenre
         }
     },
     methods: {
         searchGenre: function (genreSelected) {
             console.log(genreSelected);
+            this.genreToSearch = genreSelected;
+            console.log(this.genreToSearch);
         }
     },
     created: function () {

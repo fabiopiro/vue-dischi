@@ -2,7 +2,7 @@
   <nav>
       <img src="../assets/img/spotify.png" alt="logo">
       <select name="genre" id="genre" v-model="genreSelected" @change="$emit('performSearch' , genreSelected)">
-          <option value="all">All Genre</option>
+          <option value="All">All Genre</option>
           <option value="Rock">Rock</option>
           <option value="Pop">Pop</option>
           <option value="Jazz">Jazz</option>
